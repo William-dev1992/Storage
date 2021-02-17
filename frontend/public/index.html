@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <script src="./src/estoque.js" defer></script>
+    <link rel="stylesheet" href="./src/styles/estoque.css">
+    <title>Estoque</title>
+  </head>
+  <body>
+    <div id="root">
+      <h1 id="title">Storage</h1>
+      <input id="pesq" type="text" name="busca" placeholder="Pesquisar">
+
+      <button id="add">+</button>
+      <div id="addArea">
+        <input class="addItens" type="text" id="nome" placeholder="Produto">
+        <input class="addItens" type="number" id="quantidade" min="0" placeholder="Quantidade">
+        <input class="addItens" type="date" id="data" placeholder="Data">
+        <button id="addBut">OK</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Data</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="table">
+        </tbody>
+      </table>
+    </div>
+
+    <div class="editArea out">
+      <div class="editField">
+        <h4>Edite as informações</h4>
+        <form action="" onsubmit="preventD(event)">
+          <input class="editInputs" type="text">
+          <input class="editInputs" type="number">
+          <input class="editInputs" type="date">
+          <button class="editBut" >Salvar</button>
+          <a href="#" onclick="editItem()" class="cancelBut">Cancelar</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

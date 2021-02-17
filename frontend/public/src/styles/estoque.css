@@ -1,0 +1,163 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+#pesq{
+  margin: 3rem 0.2rem 3rem 2rem;
+  padding: 5px;
+  border: solid 1px grey;
+  border-radius: 5px;
+
+  background-image: url("../imagens/lupa.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 5px);
+}
+#title{
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+  margin: 25px;
+}
+#add{
+  padding: 5px;
+  width: 29px;
+}
+#addArea{
+  display:none ;
+  margin:0px 0px 35px 25px;
+}
+.addItens{
+  height: 15px;
+  width: 180px;
+
+  margin: 0.3rem;
+  padding: 5px;
+  border: solid 1px grey;
+  border-radius: 5px;
+}
+#addBut{
+  padding: 5px;
+  width: 32px;
+  height: 28px;
+}
+.prodBut{
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.editar{
+  height: 15px;
+  width: 15px;
+}
+
+.editArea{
+  background-color: rgba(0, 0, 0, 0.2) ;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  font-size: 50px;
+  top: 0;
+}
+
+.editField{
+  color: black;
+  background-color: white;
+  height: 350px;
+  width: 350px;
+
+  padding: 15px 0 0 0;
+  border: 1px solid rgba(177, 177, 177, 0.507);
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.editField h4{
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.editField input{
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+  height: 25px;
+
+  border-radius: 8px;
+  border: 1px solid black;
+
+  padding: 3px;
+}
+
+.editBut{
+  width: 125px;
+  height: 55px;
+
+  background-color: rgb(89, 218, 85);
+  color: white;
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1rem;
+  transition: 2ms;
+}
+
+.editBut:hover{
+  background-color: rgb(47, 255, 40);
+  cursor: pointer;
+}
+
+.cancelBut{
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(233, 122, 122);
+
+  padding: 18px 30px;
+  border: 2px solid rgb(233, 122, 122);
+  border-radius: 10px;
+  transition: 2ms color border;
+}
+
+.cancelBut:hover{
+  color: red;
+  border: 2px solid red;
+}
+
+.out{
+  display: none;
+  visibility: hidden;
+}
+
+table{
+  transform: translateX(calc(40%)); 
+  max-width: 795px;
+}
+th, td {
+  max-width: 250px;
+  width: 250px;
+  height: 45px;
+  text-align: left;
+  padding-left:10px;
+  overflow: auto;
+
+  border: 1px solid rgb(99, 98, 98);
+}
+td {
+  width: 40px;
+}
+td > input {
+  width: 94%;
+}
+
+/*Modal//////////////////////////////////*/
