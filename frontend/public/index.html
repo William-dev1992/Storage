@@ -11,7 +11,7 @@
   <body>
     <div id="root">
       <h1 id="title">Storage</h1>
-      <input id="pesq" type="text" name="busca" placeholder="Pesquisar">
+      <input id="pesq" type="text" onkeyup="onSearch()" name="busca" placeholder="Pesquisar itens...">
 
       <button id="add">+</button>
       <div id="addArea">
@@ -27,8 +27,7 @@
             <th>Nome</th>
             <th>Quantidade</th>
             <th>Data</th>
-            <th></th>
-            <th></th>
+            <th class="settings"></th>
           </tr>
         </thead>
         <tbody id="table">

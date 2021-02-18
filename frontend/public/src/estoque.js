@@ -4,19 +4,6 @@ var addBut = document.getElementById('addBut');
 
 addBut.onclick = () => addItem();
 
-function preventD(event){
-  event.preventDefault()
-}
-
-function init() {
-    if(document.querySelector("tbody").innerText != ""){
-        document.querySelector("table").style.display = 'table';
-    } else {
-        document.querySelector("table").style.display = 'none';
-    }
-}
-init();
-
 addArBut.onclick = function (){
     let addArea = document.getElementById('addArea');
     switch(addArBut.innerText){
@@ -31,9 +18,17 @@ addArBut.onclick = function (){
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    attTable();
-})
+function preventD(event){
+  event.preventDefault()
+}
+
+function init() {
+    if(document.querySelector("tbody").innerText != ""){
+        document.querySelector("table").style.display = 'table';
+    } else {
+        document.querySelector("table").style.display = 'none';
+    }
+}
 
 function attTable(){
     fetch("http://localhost:4000/api/all").then(res => {
@@ -43,17 +38,20 @@ function attTable(){
 
     let itens = JSON.parse(json);
     itens.forEach((item) => {
+        let splittedDate = item.data.split("-")
+        let fomatedDate = `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`;
+
         let prodElement = `
           <tr id='${item.id}'>
-            <th>${item.nome}</th>
+            <th class="product" >${item.nome}</th>
             <td>${item.quantidade}</td>
-            <td>${item.data}</td>
-            <td>
+            <td>${fomatedDate}</td>
+            <td class="settings">
               <button class="prodBut " onclick="editItem('${item.id}')">
                 <img src="./src/imagens/engrenagem.png" alt="Editar" class="editar">
               </button>
+              <button class="prodBut" onclick="deleteItem('${item.id}')">X</button>
             </td>
-            <td><button class="prodBut" onclick="deleteItem('${item.id}')">X</button></td>
           </tr>`
 
         prodElemments += prodElement;
@@ -149,3 +147,25 @@ function deleteItem(id){
         })
     })
 }
+
+function onSearch(){
+  let searchInput = document.querySelector('#pesq').value;
+  searchInput = searchInput.toLowerCase();
+  let w = document.getElementsByClassName('product');
+
+  for (i = 0; i < w.length; i++){
+    if (!w[i].innerHTML.toLowerCase().includes(searchInput)) {
+      w[i].parentElement.classList.add('out');
+      init();
+    } else {
+      w[i].parentElement.classList.remove('out');
+      init();
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  attTable();
+  init();
+})
+

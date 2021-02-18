@@ -3,55 +3,163 @@
   padding: 0;
   font-family: sans-serif;
 }
-#pesq{
-  margin: 3rem 0.2rem 3rem 2rem;
-  padding: 5px;
-  border: solid 1px grey;
-  border-radius: 5px;
 
-  background-image: url("../imagens/lupa.png");
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: calc(100% - 5px);
-}
 #title{
   display: flex;
   justify-content: center;
   font-size: 4rem;
   margin: 25px;
 }
-#add{
-  padding: 5px;
-  width: 29px;
+
+.out{
+  display: none;
+  visibility: hidden;
 }
+
+/*Search////////////////////////////////*/
+
+#pesq{
+  height: 30px;
+  width: 250px;
+
+  margin: 3rem 0.2rem 3rem 2rem;
+  padding-left: 30px;
+  border: solid 1px grey;
+  border-radius: 5px;
+
+  background-image: url("../imagens/lupa.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: calc(5px);
+
+  outline: none;
+
+  font-size: 1rem;
+}
+
+#pesq::placeholder{
+  font-size: 1rem;
+}
+
+/*Add item/////////////////////////////////*/
+
 #addArea{
   display:none ;
   margin:0px 0px 35px 25px;
 }
+
 .addItens{
-  height: 15px;
-  width: 180px;
+  height: 30px;
+  width: 250px;
 
   margin: 0.3rem;
-  padding: 5px;
+  padding-left: 5px;
   border: solid 1px grey;
   border-radius: 5px;
+
+  font-size: 1rem;
 }
+
+/*Buttons & links/////////////////////////////////*/
+
+#add{
+  padding: 6px;
+  width: 100px;
+  font-size: 1rem;
+}
+
+#add:hover{
+  cursor: pointer;
+}
+
+.editBut{
+  width: 125px;
+  height: 55px;
+
+  background-color: rgb(89, 218, 85);
+  color: white;
+  border: none;
+  border-radius: 10px;
+
+  font-size: 1rem;
+  transition: 2ms;
+}
+
+.editBut:hover{
+  background-color: rgb(47, 255, 40);
+  cursor: pointer;
+}
+
+.cancelBut{
+  font-size: 1rem;
+  text-decoration: none;
+  color: rgb(233, 122, 122);
+
+  padding: 18px 30px;
+  border: 2px solid rgb(233, 122, 122);
+  border-radius: 10px;
+  transition: 2ms color border;
+}
+
+.cancelBut:hover{
+  color: red;
+  border: 2px solid red;
+}
+
 #addBut{
-  padding: 5px;
-  width: 32px;
-  height: 28px;
+  padding: 6px;
+  width: 100px;
+  font-size: 1rem;
 }
+
+#addBut:hover{
+  cursor: pointer;
+}
+
 .prodBut{
-  padding: 5px;
   width: 30px;
   height: 30px;
+
+  font-size: 1.1rem;
+
+  margin-left: 1rem;
 }
 
 .editar{
   height: 15px;
   width: 15px;
 }
+
+/*Table/////////////////////////////////*/
+
+table{
+  margin-left: 50%;
+  transform: translateX(-40%);
+
+  max-width: 795px;
+}
+
+th, td {
+  max-width: 250px;
+  width: 250px;
+  height: 45px;
+  text-align: left;
+  padding-left:10px;
+  overflow: auto;
+
+  border: 1px solid rgb(99, 98, 98);
+}
+
+td {
+  width: 40px;
+}
+
+.settings{
+  border: none;
+}
+
+/*Modal//////////////////////////////////*/
+
 
 .editArea{
   background-color: rgba(0, 0, 0, 0.2) ;
@@ -99,65 +207,3 @@
 
   padding: 3px;
 }
-
-.editBut{
-  width: 125px;
-  height: 55px;
-
-  background-color: rgb(89, 218, 85);
-  color: white;
-  border: none;
-  border-radius: 10px;
-
-  font-size: 1rem;
-  transition: 2ms;
-}
-
-.editBut:hover{
-  background-color: rgb(47, 255, 40);
-  cursor: pointer;
-}
-
-.cancelBut{
-  font-size: 1rem;
-  text-decoration: none;
-  color: rgb(233, 122, 122);
-
-  padding: 18px 30px;
-  border: 2px solid rgb(233, 122, 122);
-  border-radius: 10px;
-  transition: 2ms color border;
-}
-
-.cancelBut:hover{
-  color: red;
-  border: 2px solid red;
-}
-
-.out{
-  display: none;
-  visibility: hidden;
-}
-
-table{
-  transform: translateX(calc(40%)); 
-  max-width: 795px;
-}
-th, td {
-  max-width: 250px;
-  width: 250px;
-  height: 45px;
-  text-align: left;
-  padding-left:10px;
-  overflow: auto;
-
-  border: 1px solid rgb(99, 98, 98);
-}
-td {
-  width: 40px;
-}
-td > input {
-  width: 94%;
-}
-
-/*Modal//////////////////////////////////*/
