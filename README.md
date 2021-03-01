@@ -14,7 +14,7 @@ At this version, you're able to:
 To execute this code, follow the steps:
 
 - Download and extract it;
-- Download the dependencies;
+- Download the dependencies(express is the only dependence);
 - Open the terminal and go to the "backend" repository;
 -- Run the line "node index.js";
 
