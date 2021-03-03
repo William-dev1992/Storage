@@ -1,4 +1,4 @@
-#Storage
+# Storage
 
 This app works as a storage, where you can keep track of the itens you have in it.
 
@@ -9,7 +9,7 @@ At this version, you're able to:
 - Edit itens;
 - Search for an item in your storage;
 
-##Execution
+## Execution
 
 To execute this code, follow the steps:
 
